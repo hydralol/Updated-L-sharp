@@ -14,10 +14,10 @@ namespace FishermanFizz
         public static Orbwalking.Orbwalker Orbwalker;
         public static Spell Q, W, E, E2, R;
         public static SpellSlot IgniteSlot;
-        public static Items.Item DFG;
         public static int JumpState;
         public static float Time;
         public static bool Called;
+        public Obj_AI_Hero player = ObjectManager.Player;
 
         public static Menu Config;
 
@@ -26,6 +26,7 @@ namespace FishermanFizz
             CustomEvents.Game.OnGameLoad += OnGameLoad;
             Obj_AI_Base.OnProcessSpellCast += OnProcSpell;
             Orbwalking.BeforeAttack += BAttack;
+            Game.PrintChat("FishermanFizz Updated By Hydralolz");
         }
 
         private static void OnGameLoad(EventArgs args)
@@ -40,8 +41,6 @@ namespace FishermanFizz
             E = new Spell(SpellSlot.E, 400);
             E2 = new Spell(SpellSlot.E, 400);
             R = new Spell(SpellSlot.R, 1200);  //1275 True
-
-            DFG = Utility.Map.GetMap().Type == Utility.Map.MapType.TwistedTreeline ? new Items.Item(3188, 750) : new Items.Item(3128, 750);
 
             IgniteSlot = Player.GetSpellSlot("SummonerDot");
 
@@ -62,7 +61,6 @@ namespace FishermanFizz
             Config.SubMenu("Combo").AddItem(new MenuItem("UseW", "Use W").SetValue(true));
             Config.SubMenu("Combo").AddItem(new MenuItem("UseE", "Use E").SetValue(true));
             Config.SubMenu("Combo").AddItem(new MenuItem("UseR", "Use R").SetValue(true));
-            Config.SubMenu("Combo").AddItem(new MenuItem("UseDFG", "DFG Shark Target").SetValue(true));
             Config.SubMenu("Combo").AddItem(new MenuItem("ComboActive", "Combo!").SetValue(new KeyBind(32, KeyBindType.Press)));
 
             Config.AddSubMenu(new Menu("Harass", "Harass"));
@@ -82,6 +80,10 @@ namespace FishermanFizz
             Config.SubMenu("JungleClear").AddItem(new MenuItem("UseWj", "Use W").SetValue(true));
             Config.SubMenu("JungleClear").AddItem(new MenuItem("UseEj", "Use E").SetValue(true));
             Config.SubMenu("JungleClear").AddItem(new MenuItem("JungleClearActive", "JungleClear!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
+
+            Config.AddSubMenu(new Menu("Steal Options", "steal"));
+            Config.SubMenu("Steal").AddItem(
+                new MenuItem("StealKey", "Steal Drake").SetValue(new KeyBind("G".ToCharArray()[0], KeyBindType.Press)));
 
             Config.AddSubMenu(new Menu("Drawings", "Drawings"));
             Config.SubMenu("Drawings").AddItem(new MenuItem("qRange", "Q range").SetValue(new Circle(true, Color.FromArgb(255, 125, 200, 255))));
@@ -134,7 +136,6 @@ namespace FishermanFizz
 
             if (rTarget.IsValidTarget(R.Range) && R.IsReady())
             {
-                DFG.Cast(rTarget);
             }
             if (qTarget != null && Config.Item("UseQ").GetValue<bool>() &&
                 (qTarget.IsValidTarget(Q.Range) && Q.IsReady()))
@@ -238,7 +239,7 @@ namespace FishermanFizz
             if (ePos.MinionsHit >= 1)
                 E.Cast(ePos.Position, true);
         }
-
+      
         private static void IgniteKS()
         {
             foreach (var Champion in ObjectManager.Get<Obj_AI_Hero>())
