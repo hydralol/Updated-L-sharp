@@ -1,0 +1,12 @@
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\FishermanFizz.exe.config
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\FishermanFizz.exe
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\FishermanFizz.pdb
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\LeagueSharp.Common.dll
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\LeagueSharp.dll
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\SharpDX.dll
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\clipper_library.dll
+C:\Users\Hydralol\Desktop\FishermanFizz\bin\Release\LeagueSharp.xml
+C:\Users\Hydralol\Desktop\FishermanFizz\obj\Debug\FishermanFizz.csprojResolveAssemblyReference.cache
+C:\Users\Hydralol\Desktop\FishermanFizz\obj\Debug\FishermanFizz.exe
+C:\Users\Hydralol\Desktop\FishermanFizz\obj\Debug\FishermanFizz.pdb
