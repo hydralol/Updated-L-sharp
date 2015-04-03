@@ -96,7 +96,7 @@ namespace FishermanFizz
             Config.AddToMainMenu();
 
             Drawing.OnDraw += OnDraw;
-            Game.OnGameUpdate += OnGameUpdate;
+            Game.OnUpdate += OnGameUpdate;
         }
 
         private static void OnGameUpdate(EventArgs args)
