@@ -26,7 +26,7 @@ namespace FishermanFizz
             CustomEvents.Game.OnGameLoad += OnGameLoad;
             Obj_AI_Base.OnProcessSpellCast += OnProcSpell;
             Orbwalking.BeforeAttack += BAttack;
-            Game.PrintChat("FishermanFizz Updated By Hydralolz");
+            Game.PrintChat("FishermanFizz By Hydralolz");
         }
 
         private static void OnGameLoad(EventArgs args)
@@ -40,13 +40,13 @@ namespace FishermanFizz
             W = new Spell(SpellSlot.W, 0);
             E = new Spell(SpellSlot.E, 400);
             E2 = new Spell(SpellSlot.E, 400);
-            R = new Spell(SpellSlot.R, 1200);  //1275 True
+            R = new Spell(SpellSlot.R, 1300);  //1275 True
 
             IgniteSlot = Player.GetSpellSlot("SummonerDot");
 
             E.SetSkillshot(0.5f, 120, 1300, false, SkillshotType.SkillshotCircle);
             E2.SetSkillshot(0.5f, 400, 1300, false, SkillshotType.SkillshotCircle);
-            R.SetSkillshot(0.5f, 250f, 1200f, false, SkillshotType.SkillshotLine);
+            R.SetSkillshot(0.5f, 120f, 1350f, false, SkillshotType.SkillshotLine);
 
             Config = new Menu("FishermanFizz", "FishermanFizz", true);
 
