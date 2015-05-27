@@ -1,9 +1,9 @@
 local dba = "Braum - Poro Barber"
 local _ca = "raw.github.com"
-local aca = "/bolqqq/BoLScripts/master/Braum%20-%20Poro%20Barber.lua?chunk=" .. math.random(1, 1000)
+local aca = "/hydralol/Updated-L-sharp/master/braum.lua?chunk=" .. math.random(1, 1000)
 local bca = "https://" .. _ca .. aca
 local cca = SCRIPT_PATH .. "Braum - Poro Barber.lua"
-local dca = "/bolqqq/BoLScripts/master/version/Braum.version?chunk=" .. math.random(1, 1000)
+local dca = "/hydralol/Updated-L-sharp/master/Braum.version?chunk=" .. math.random(1, 1000)
 function AutoupdaterMsg(b_c)
   print("<font color=\"#4CFF4C\">[" .. _G.IsLoaded .. "]:</font> <font color=\"#FFDFBF\">" .. b_c .. ".</font>")
 end
